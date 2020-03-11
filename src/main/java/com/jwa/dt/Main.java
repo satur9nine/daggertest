@@ -3,16 +3,19 @@ package com.jwa.dt;
 
 import dagger.Component;
 
+import javax.inject.Singleton;
+
 public class Main {
 
-    @Component(modules = HomeTheaterSystemModule.class)
+    @Singleton
+    @Component
     interface HomeTheaterSystemBuilder {
-        HomeTheaterSystem dothings();
+        HomeTheaterSystem makeOne();
     }
 
     public void log() {
-        HomeTheaterSystem homeTheaterSystem = DaggerMain_HomeTheaterSystemBuilder.builder().build().dothings();
-        System.out.println("I have " + homeTheaterSystem);
+        System.out.println("I made a " + DaggerMain_HomeTheaterSystemBuilder.create().makeOne());
+        System.out.println("I made a " + DaggerMain_HomeTheaterSystemBuilder.create().makeOne());
     }
 
     public static void main(String[] args) {

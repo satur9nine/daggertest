@@ -3,7 +3,6 @@ package com.jwa.dt;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-@Singleton
 public class HomeTheaterSystem {
 
   @Inject
@@ -18,6 +17,7 @@ public class HomeTheaterSystem {
   @Inject
   AudioSource audioSource;
 
+  @Inject
   public HomeTheaterSystem() {
 
   }
