@@ -14,7 +14,8 @@ public class AudioSource {
   @Override
   public String toString() {
     return "AudioSource{" +
-        "powerSource=" + powerSource +
+        "this=" + super.toString() +
+        ", powerSource=" + powerSource +
         '}';
   }
 }

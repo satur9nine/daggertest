@@ -9,13 +9,16 @@ public class Main {
 
     @Singleton
     @Component
-    interface HomeTheaterSystemBuilder {
-        HomeTheaterSystem makeOne();
+    interface MainFactory {
+        HomeTheaterSystem createHomeTheaterSystem();
     }
 
+    // There shall be only one @Component otherwise Singletons are not Singletons
+    static final MainFactory sMainFactory = DaggerMain_MainFactory.create();
+
     public void log() {
-        System.out.println("I made a " + DaggerMain_HomeTheaterSystemBuilder.create().makeOne());
-        System.out.println("I made a " + DaggerMain_HomeTheaterSystemBuilder.create().makeOne());
+        System.out.println("I made a " + sMainFactory.createHomeTheaterSystem());
+        System.out.println("I made a " + sMainFactory.createHomeTheaterSystem());
     }
 
     public static void main(String[] args) {

@@ -1,7 +1,6 @@
 package com.jwa.dt;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
 public class HomeTheaterSystem {
 
@@ -25,7 +24,8 @@ public class HomeTheaterSystem {
   @Override
   public String toString() {
     return "HomeTheaterSystem{" +
-        "left=" + left +
+        "this=" + super.toString() +
+        ", left=" + left +
         ", right=" + right +
         ", amp=" + amp +
         ", audioSource=" + audioSource +
